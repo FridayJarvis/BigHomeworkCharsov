@@ -116,7 +116,7 @@ public:
 				return;
 			}
 		}
-		std::cout << "Çàïèñü íå íàéäåíà!\n";
+		std::cout << "Ð—Ð°Ð¿Ð¸ÑÑŒ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð°!\n";
 	}
 
 	void deleteStudentById(int id) {
@@ -134,12 +134,12 @@ int main() {
 
 	while (true) {
 		int choice;
-		std::cout << "1. Äîáàâèòü ñòóäåíòà\n"
-			<< "2. Ïîêàçàòü âñåõ ñòóäåíòîâ\n"
-			<< "3. Íàéòè ñòóäåíòà\n"
-			<< "4. Óäàëèòü ñòóäåíòà\n"
-			<< "0. Âûéòè\n";
-		std::cout << "Âûáåðèòå äåéñòâèå: ";
+		std::cout << "1. Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°\n"
+			<< "2. ÐŸÐ¾ÐºÐ°Ð·Ð°Ñ‚ÑŒ Ð²ÑÐµÑ… ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð²\n"
+			<< "3. ÐÐ°Ð¹Ñ‚Ð¸ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°\n"
+			<< "4. Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°\n"
+			<< "0. Ð’Ñ‹Ð¹Ñ‚Ð¸\n";
+		std::cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 		std::cin >> choice;
 
 		switch (choice) {
@@ -148,22 +148,22 @@ int main() {
 			float avgScore;
 			std::string firstName, middleName, lastName, specialization;
 
-			std::cout << "Ââåäèòå íîìåð ÈÑÓ: ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð˜Ð¡Ð£: ";
 			std::cin >> id;
 
-			std::cout << "Ââåäèòå èìÿ: ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ: ";
 			std::cin >> firstName;
 
-			std::cout << "Ââåäèòå ôàìèëèþ: ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ: ";
 			std::cin >> middleName;
 
-			std::cout << "Ââåäèòå îò÷åñòâî: ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¾Ñ‚Ñ‡ÐµÑÑ‚Ð²Ð¾: ";
 			std::cin >> lastName;
 
-			std::cout << "Ââåäèòå ñðåäíèé áàëë: ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÑ€ÐµÐ´Ð½Ð¸Ð¹ Ð±Ð°Ð»Ð»: ";
 			std::cin >> avgScore;
 
-			std::cout << "Ââåäèòå ñïåöèàëüíîñòü: ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ¿ÐµÑ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚ÑŒ: ";
 			std::cin >> specialization;
 
 			db.addStudent(id, firstName, middleName, lastName, avgScore, specialization);
@@ -174,11 +174,11 @@ int main() {
 			break;
 		case 3: {
 			std::string criteria;
-			std::cout << "Ââåäèòå êðèòåðèé ïîèñêà (id, name, avg_score, specialization): ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÑ€Ð¸Ñ‚ÐµÑ€Ð¸Ð¹ Ð¿Ð¾Ð¸ÑÐºÐ° (id, name, avg_score, specialization): ";
 			std::cin >> criteria;
 
 			std::string value;
-			std::cout << "Ââåäèòå çíà÷åíèå ïîèñêà: ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð¿Ð¾Ð¸ÑÐºÐ°: ";
 			std::cin >> value;
 
 			db.searchStudent(criteria, value);
@@ -186,17 +186,17 @@ int main() {
 		}
 		case 4: {
 			int id;
-			std::cout << "Ââåäèòå ID ñòóäåíòà äëÿ óäàëåíèÿ: ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ID ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð° Ð´Ð»Ñ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ: ";
 			std::cin >> id;
 
 			db.deleteStudentById(id);
 			break;
 		}
 		case 0:
-			std::cout << "Âû âûøëè èç ïðîãðàììû!\n";
+			std::cout << "Ð’Ñ‹ Ð²Ñ‹ÑˆÐ»Ð¸ Ð¸Ð· Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹!\n";
 			return 0;
 		default:
-			std::cout << "Íåâåðíûé âûáîð ìåíþ! Ïîïðîáóéòå ñíîâà!\n";
+			std::cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð²Ñ‹Ð±Ð¾Ñ€ Ð¼ÐµÐ½ÑŽ! ÐŸÐ¾Ð¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ ÑÐ½Ð¾Ð²Ð°!\n";
 		}
 	}
 	return 0;
